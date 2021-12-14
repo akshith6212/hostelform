@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Hostel forms | NITC</title>
+     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1484/1484799.png" type="image/x-icon">
+     <style>
+          @import url("https://fonts.googleapis.com/css?family=Rubik:700&display=swap");
+
+          * {
+               box-sizing: border-box;
+               margin-left: 10px;
+               margin-right: 10px;
+          }
+
+          *::before,
+          *::after {
+               box-sizing: border-box;
+          }
+
+          body {
+               font-family: "Rubik", sans-serif;
+               font-size: 1rem;
+               line-height: 1.5;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               margin: 0;
+               min-height: 100vh;
+               background-color: #E0E5ED;
+          }
+
+          /* button */
+          button {
+               position: relative;
+               display: inline-block;
+               cursor: pointer;
+               outline: none;
+               border: 0;
+               vertical-align: middle;
+               text-decoration: none;
+               font-size: inherit;
+               font-family: inherit;
+          }
+
+          button.main-button,
+          button.exit,
+          button.enter {
+               font-weight: 600;
+               color: #382b22;
+               text-transform: uppercase;
+               padding: 1.25em 2em;
+               background: #fff0f0;
+               border: 2px solid #b18597;
+               border-radius: 0.75em;
+               transform-style: preserve-3d;
+               transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+          }
+
+          button.main-button::before,
+          button.exit::before,
+          button.enter::before {
+               position: absolute;
+               content: "";
+               width: 100%;
+               height: 100%;
+               top: 0;
+               left: 0;
+               right: 0;
+               bottom: 0;
+               background: #f9c4d2;
+               border-radius: inherit;
+               box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+               transform: translate3d(0, 0.75em, -1em);
+               transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+          }
+
+          button.main-button:hover,
+          button.exit:hover,
+          button.enter:hover {
+               background: #ffe9e9;
+               transform: translate(0, 0.25em);
+          }
+
+          button.main-button:hover::before,
+          button.exit:hover::before,
+          button.enter:hover::before {
+               box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
+               transform: translate3d(0, 0.5em, -1em);
+          }
+
+          button.main-button:active,
+          button.exit:active,
+          button.enter:active {
+               background: #ffe9e9;
+               transform: translate(0em, 0.75em);
+          }
+
+          button.main-button:active::before,
+          button.exit:active::before,
+          button.enter:active::before {
+               box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+               transform: translate3d(0, 0, -1em);
+          }
+
+
+          /* navbar */
+          .navbar {
+               top: 0%;
+               left: 0%;
+               padding: 20px;
+               z-index: 10;
+               position: fixed;
+               width: 100%;
+          }
+
+          .homelink {
+               float: left;
+               display: inline;
+               margin-left: 3rem;
+               color: white;
+          }
+
+          .links {
+               float: right;
+               display: inline;
+               margin-right: 3rem;
+               color: white;
+          }
+
+          .navbar>a {
+               color: #c2cad0;
+               text-decoration: none;
+          }
+
+          .navbar>a:hover {
+               color: skyblue;
+          }
+
+          .navbar>a,
+          .links>a,
+          .homelink>a {
+               font-size: 1.6rem;
+          }
+
+          .links>a,
+          .homelink>a {
+               margin: 5px;
+               color: black;
+               text-decoration: none;
+               font-size: large;
+          }
+
+          .links>a:hover,
+          .homelink>a:hover {
+               color: skyblue;
+          }
+
+          /* warning */
+          .warning {
+               color: red;
+          }
+
+          /* popup */
+          .overlay {
+               background-color: rgba(0, 0, 0, 0.6);
+               bottom: 0;
+               cursor: default;
+               left: 0;
+               opacity: 0;
+               position: fixed;
+               right: 0;
+               top: 0;
+               visibility: hidden;
+               z-index: 1;
+
+               -webkit-transition: opacity .5s;
+               -moz-transition: opacity .5s;
+               -ms-transition: opacity .5s;
+               -o-transition: opacity .5s;
+               transition: opacity .5s;
+          }
+
+          .overlay:target {
+               visibility: visible;
+               opacity: 1;
+          }
+
+          .popup {
+               background-color: #fff;
+               border: 3px solid #fff;
+               display: inline-block;
+               left: 50%;
+               opacity: 0;
+               padding: 15px;
+               position: fixed;
+               text-align: justify;
+               top: 40%;
+               visibility: hidden;
+               z-index: 10;
+
+               -webkit-transform: translate(-50%, -50%);
+               -moz-transform: translate(-50%, -50%);
+               -ms-transform: translate(-50%, -50%);
+               -o-transform: translate(-50%, -50%);
+               transform: translate(-50%, -50%);
+
+               -webkit-border-radius: 10px;
+               -moz-border-radius: 10px;
+               -ms-border-radius: 10px;
+               -o-border-radius: 10px;
+               border-radius: 10px;
+
+               -webkit-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+               -moz-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+               -ms-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+               -o-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+               box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+
+               -webkit-transition: opacity .5s, top .5s;
+               -moz-transition: opacity .5s, top .5s;
+               -ms-transition: opacity .5s, top .5s;
+               -o-transition: opacity .5s, top .5s;
+               transition: opacity .5s, top .5s;
+          }
+
+          .overlay:target+.popup {
+               top: 50%;
+               opacity: 1;
+               visibility: visible;
+          }
+
+          .close {
+               background-color: rgba(0, 0, 0, 0.8);
+               height: 30px;
+               line-height: 30px;
+               position: absolute;
+               right: 0;
+               text-align: center;
+               text-decoration: none;
+               top: -15px;
+               width: 30px;
+
+               -webkit-border-radius: 15px;
+               -moz-border-radius: 15px;
+               -ms-border-radius: 15px;
+               -o-border-radius: 15px;
+               border-radius: 15px;
+          }
+
+          .close:before {
+               color: rgba(255, 255, 255, 0.9);
+               content: "X";
+               font-size: 24px;
+               text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+          }
+
+          .close:hover {
+               background-color: rgba(64, 128, 128, 0.8);
+          }
+
+          .popup p,
+          .popup div {
+               margin-bottom: 10px;
+          }
+
+          .popup label {
+               display: inline-block;
+               text-align: left;
+               width: 120px;
+          }
+
+          .popup input[type="text"] {
+               border: 1px solid;
+               border-color: #999 #ccc #ccc;
+               margin: 0;
+               padding: 2px;
+
+               -webkit-border-radius: 2px;
+               -moz-border-radius: 2px;
+               -ms-border-radius: 2px;
+               -o-border-radius: 2px;
+               border-radius: 2px;
+          }
+
+          .popup input[type="text"]:hover,
+          .popup input[type="password"]:hover {
+               border-color: #555 #888 #888;
+          }
+     </style>
+     <script type="text/javascript">
+          window.history.forward();
+          function noBack()
+          {
+              window.history.forward();
+          }
+      </script>
+</head>
+
+<body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
+     <div class="navbar">
+          <div class="homelink">
+               <a href="/">home</a>
+          </div>
+          <div class="links">
+               {% if user.is_authenticated %}
+               <a href="/accounts/logout/">logout</a>
+               {% else %}
+               <a href="/accounts/login/">login</a>
+               <a href="/accounts/register/">register</a>
+               {% endif %}
+          </div>
+     </div>
+     {% if user.is_authenticated %}
+     <a href="#reason_form" id="reason_popup"> <button class="exit">Are you exiting?</button></a>
+     <a href="#x" class="overlay" id="reason_form"></a>
+     <form method="POST" class="popup">
+          {% csrf_token %}
+          <h2>Submit the reason</h2>
+          <div>
+               <label for="reason">Reason</label>
+               <input type="text" name="reason" value="" required />
+          </div>
+          <input type="submit" value="Submit" />
+          <a class="close" href="#close"></a>
+     </form>
+
+
+     <a href="/enter"> <button class="enter">Are you entering?</button></a>
+     {% else %}
+     <p class="warning">login please!</p>
+     {% endif %}
+</body>
+
+</html>

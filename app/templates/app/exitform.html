@@ -1,0 +1,9 @@
+<form method="POST">
+  {% csrf_token %}
+  <div class="form__field">
+      <span class="hidden">Reason</span>
+      <input autocomplete="username" id="login__username" type="text" name="reason" class="form__input"
+          placeholder="Username" required>
+      <input type="submit" value="Submit">
+  </div>
+</form>

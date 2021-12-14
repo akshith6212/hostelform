@@ -1,0 +1,44 @@
+{% extends "accounts/layout/layout_login.html"%}
+{% load static %}
+
+{% block body %}
+
+<div class="msg" style=" text-align:center; color: red; font-size:10px;">
+    {% for message in messages %}
+    <h1> {{message}} </h1>
+    {% endfor %}
+</div>
+
+<form method="POST" class="form login">
+    {% csrf_token %}
+    <div class="form__field">
+        <a href="/" style="height: 80px;margin-left: auto; margin-right: auto;"><img
+                src="https://cdn-icons-png.flaticon.com/512/1484/1484799.png"
+                style="height: 80px;margin-left: auto; margin-right: auto;"></a>
+    </div>
+    <div class="form__field">
+        <label for="login__username"><svg class="icon">
+                <use xlink:href="#icon-user"></use>
+            </svg><span class="hidden">Username</span></label>
+        <input autocomplete="username" id="login__username" type="text" name="username" class="form__input"
+            placeholder="Username" required>
+    </div>
+
+    <div class="form__field">
+        <label for="login__password"><svg class="icon">
+                <use xlink:href="#icon-lock"></use>
+            </svg><span class="hidden">Password</span></label>
+        <input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
+    </div>
+
+    <div class="form__field">
+        <input type="submit" value="Sign In">
+    </div>
+
+</form>
+
+<p class="text--center">Not a member? <a href="/accounts/register/">Sign up now</a> <svg class="icon">
+        <!-- <use xlink:href="#icon-arrow-right"></use> -->
+    </svg></p>
+
+{% endblock %}

@@ -1,0 +1,822 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap");
+
+html,
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FCF7F7;
+    color: #364E65;
+    height: 100%
+}
+
+::-webkit-input-placeholder {
+    font-size: 13px !important;
+    opacity: 0.5 !important
+}
+
+:-ms-input-placeholder {
+    font-size: 13px !important;
+    opacity: 0.5 !important
+}
+
+::-ms-input-placeholder {
+    font-size: 13px !important;
+    opacity: 0.5 !important
+}
+
+::placeholder {
+    font-size: 13px !important;
+    opacity: 0.5 !important
+}
+
+.mt-6 {
+    margin-top: 6rem
+}
+
+.pt-6 {
+    padding-top: 6rem
+}
+
+.mb-6 {
+    margin-bottom: 6rem
+}
+
+.pb-6 {
+    padding-bottom: 6rem
+}
+
+.vertical-center {
+    min-height: 100%;
+    min-height: 100vh
+}
+
+.wch {
+    height: 50px;
+    overflow: hidden
+}
+
+.convert-btn {
+    border: none;
+    background: transparent
+}
+
+.theme-dark-bg {
+    background-color: #ffffff
+}
+
+.theme-red-bg {
+    background-color: #ffffff
+}
+
+.text-red {
+    color: #FF3D38
+}
+
+.text-pink {
+    color: #EF5179
+}
+
+.text-pink-hover {
+    color: #EF5179
+}
+
+.text-pink-hover:hover {
+    color: #FF3D38
+}
+
+.text-theme {
+    color: #364E65
+}
+
+.text-gray {
+    color: #90A8BE
+}
+
+.theme-badge {
+    font-size: 12px;
+    border: 1px solid #8FA8BF;
+    padding: 3px 7px;
+    color: #364E65;
+    border-radius: 5px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+    display: inline-block
+}
+
+.theme-badge:hover {
+    color: #FF3D38;
+    border: 1px solid #FF3D38
+}
+
+.badge-outline {
+    font-size: 11px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+    display: inline-block
+}
+
+.badge-outline-primary {
+    border: 1px solid #007bff;
+    color: #007bff
+}
+
+.badge-outline-secondary {
+    border: 1px solid #6c757d;
+    color: #6c757d
+}
+
+.badge-outline-success {
+    border: 1px solid #28a745;
+    color: #28a745
+}
+
+.badge-outline-danger {
+    border: 1px solid #FF3D38;
+    color: #FF3D38
+}
+
+.badge-outline-warning {
+    border: 1px solid #ffc107;
+    color: #ffc107
+}
+
+.badge-outline-info {
+    border: 1px solid #17a2b8;
+    color: #17a2b8
+}
+
+.badge-outline-light {
+    border: 1px solid #f8f9fa;
+    color: #f8f9fa
+}
+
+.badge-outline-dark {
+    border: 1px solid #343a40;
+    color: #343a40
+}
+
+.bx-shadow {
+    -webkit-box-shadow: 0px 6px 6px #eeeeee;
+    box-shadow: 0px 6px 6px #eeeeee
+}
+
+.btn {
+    border-radius: 0;
+    outline: none;
+    font-weight: 500;
+    padding-left: 26px;
+    padding-right: 26px
+}
+
+.btn:focus {
+    outline: none
+}
+
+.btn-theme {
+    background: #000;
+    color: #fff
+}
+
+.btn-theme:hover {
+    background: #FF3D38;
+    color: #fff
+}
+
+.btn-outline-theme {
+    border: 1px solid #000;
+    color: #000
+}
+
+.btn-outline-theme:hover {
+    background: #000;
+    color: #fff
+}
+
+.btn-red-theme {
+    background: #FF3D38;
+    color: #fff
+}
+
+.btn-red-theme:hover {
+    background: #000;
+    color: #fff
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #ffffff
+}
+
+.nav-pills .nav-link.active:hover,
+.nav-pills .show>.nav-link:hover {
+    color: #fff
+}
+
+.nav-pills .nav-link {
+    border-radius: 0;
+    color: #ffffff
+}
+
+.nav-pills .nav-link:hover {
+    color: #FF3D38
+}
+
+a {
+    color: #EF5179;
+    text-decoration: none;
+    outline: none
+}
+
+a:hover {
+    color: #FF3D38;
+    text-decoration: none
+}
+
+a:focus {
+    outline: none
+}
+
+p {
+    color: #364E65;
+    font-size: 15px
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+    color: #364E65
+}
+
+h2 {
+    font-size: 21px
+}
+
+h3 {
+    font-size: 17px
+}
+
+h4 {
+    font-size: 15px
+}
+
+.form-control {
+    border-radius: 0;
+    font-size: 14px
+}
+
+.custom-select {
+    border-radius: 0;
+    font-size: 14px
+}
+
+.input-group>.input-group-append:last-child>.btn:not(:last-child):not(.dropdown-toggle),
+.input-group>.input-group-append:last-child>.input-group-text:not(:last-child),
+.input-group>.input-group-append:not(:last-child)>.btn,
+.input-group>.input-group-append:not(:last-child)>.input-group-text,
+.input-group>.input-group-prepend>.btn,
+.input-group>.input-group-prepend>.input-group-text {
+    border-radius: 0
+}
+
+.form-control:focus {
+    border: 1px solid #FF3D38;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.feed-logo {
+    border: 1px solid rgba(26, 0, 0, 0.35);
+    min-width: 60px;
+    max-width: 60px;
+    min-height: 60px;
+    text-align: center
+}
+
+.feed-logo i {
+    font-size: 30px;
+    font-weight: 100;
+    padding-top: 15px
+}
+
+.alert-fade {
+    opacity: 1;
+    -webkit-transition: opacity 0.15s linear;
+    transition: opacity 0.15s linear
+}
+
+.alert-fade.out {
+    opacity: 0;
+    display: none
+}
+
+li.loop-border-bottom {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+}
+
+li.loop-border-bottom:last-child {
+    border-bottom: 0px
+}
+
+.login-wrap.landing-page .wolf-logo {
+    border: 7px solid #ffffff
+}
+
+.howtovideos .carousel-control-next,
+.howtovideos .carousel-control-prev {
+    font-size: 36px;
+    top: 12.5%
+}
+
+.howtovideos .carousel-control-next {
+    right: -100px
+}
+
+.howtovideos .carousel-control-prev {
+    left: -100px
+}
+
+.login-wrap .wolf-logo {
+    width: 100px;
+    height: 100px;
+    border: 7px solid #fcf7f7;
+    border-radius: 100%;
+    overflow: hidden;
+    margin: -60px auto 0 auto;
+    text-align: center;
+    background: #fff
+}
+
+.login-wrap .wolf-logo i {
+    font-size: 35px;
+    padding-top: 25px
+}
+
+.login-wrap .wolf-logo img {
+    width: 35px;
+    padding-top: 20px
+}
+
+.login-wrap .signup-college-logo {
+    width: 100px;
+    height: 100px;
+    border: 7px solid #fcf7f7;
+    border-radius: 100%;
+    overflow: hidden;
+    margin: -60px auto 0 auto;
+    text-align: center;
+    background: #fff
+}
+
+.login-wrap .signup-college-logo i {
+    font-size: 35px;
+    padding-top: 25px
+}
+
+.login-wrap .signup-college-logo img {
+    width: 100%
+}
+
+.header .navbar {
+    padding: 0
+}
+
+.header .navbar .navbar-nav {
+    margin-left: 60px
+}
+
+.header .navbar .navbar-nav .nav-item .nav-link {
+    color: #fff;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+.header .navbar .navbar-nav .nav-item .nav-link:hover {
+    color: #FF3D38
+}
+
+.header .navbar .navbar-nav .nav-item .nav-link.active {
+    border-bottom: 4px solid #FF3D38
+}
+
+.header .dropdown-toggle::after {
+    display: none
+}
+
+.header .user {
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    padding: 0;
+    position: relative
+}
+
+.header .user img {
+    border-radius: 100%;
+    overflow: hidden;
+    width: 100%;
+    height: 100%
+}
+
+.header .user i {
+    padding-top: 12px
+}
+
+.header .user:hover {
+    border: 1px solid #FF3D38
+}
+
+.header .user:hover::before {
+    border-top: 10px solid #FF3D38
+}
+
+.header .user::before {
+    content: '';
+    position: absolute;
+    left: 28%;
+    top: 95%;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #fff;
+    clear: both
+}
+
+.header .dropdown-menu {
+    padding: 0 !important;
+    border: 0;
+    background: #ffffff;
+    border-radius: 0;
+    color: #fff
+}
+
+.header .dropdown-menu .dropdown-item {
+    color: #fff
+}
+
+.header .dropdown-menu .dropdown-item:hover {
+    background: #FF3D38
+}
+
+.header .dropdown-item:focus,
+.header .dropdown-item:hover {
+    background: #FF3D38;
+    color: #fff
+}
+
+.header .user-dropdown-menu {
+    margin: 0.75rem 0 0
+}
+
+.mobile-signout {
+    background: none;
+    border: none
+}
+
+footer .footer {
+    border-top: 1px solid #BE9090;
+    padding: 60px 0;
+    text-align: center
+}
+
+footer .footer .footer-logo {
+    width: 32px;
+    margin: 0 auto 30px auto
+}
+
+footer .footer p {
+    font-size: 14px;
+    color: #BF908F;
+    margin-bottom: 5px
+}
+
+.badge {
+    color: #fff !important
+}
+
+.inprocess {
+    background: #065699
+}
+
+.approved {
+    background: #199942
+}
+
+.approvedfeed {
+    color: #199942
+}
+
+.rejected {
+    background: #A11632
+}
+
+.debar {
+    background: #E3101A
+}
+
+.placed {
+    background: #C1933F
+}
+
+.applied {
+    background: #0B8B79
+}
+
+.dropped {
+    background: #703745
+}
+
+.offered {
+    background: #01ACB7
+}
+
+.offerdenied {
+    background: #CB3457
+}
+
+.main-content-wrap {
+    padding: 90px 0
+}
+
+.newsfeed-card {
+    position: relative;
+    background: #fff;
+    padding: 30px
+}
+
+.newsfeed-card .time-remainder {
+    font-size: 13px;
+    color: #364E65
+}
+
+.newsfeed-card .time-remainder span {
+    color: #EF5179
+}
+
+.newsfeed-card .newsfeed-card-click {
+    display: block
+}
+
+.newsfeed-card .actions .btn {
+    min-width: 110px
+}
+
+.newsfeed-card .whichfeed-label {
+    text-align: center;
+    font-size: 9px;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 3px 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    position: absolute;
+    left: -20px;
+    top: 50px;
+    min-width: 60px;
+    max-height: 60px
+}
+
+.newsfeed-card .campaignfeed-label {
+    background: #134e6f
+}
+
+.newsfeed-card .newsfeed-label {
+    background: #1ac0c6
+}
+
+.newsfeed-card .jobfeed-label {
+    background: #ff6150
+}
+
+.newsfeed-card .workshopfeed-label {
+    background: #29b312;
+    font-size: 8px
+}
+
+.newsfeed-card .disabled {
+    opacity: 1
+}
+
+.btn-theme.disabled {
+    opacity: 1
+}
+
+.vd-card a {
+    font-size: 12px
+}
+
+.dash-profile {
+    text-align: center
+}
+
+.dash-profile .user-verfied {
+    color: #5BCEAE;
+    font-size: 18px
+}
+
+.dash-profile .user-photo {
+    width: 100px;
+    height: 100px;
+    border: 7px solid #fcf7f7;
+    border-radius: 100%;
+    overflow: hidden;
+    margin: -60px auto 0 auto;
+    text-align: center;
+    background: #fff
+}
+
+.dash-profile .user-photo i {
+    font-size: 35px;
+    padding-top: 25px
+}
+
+.dash-profile .user-photo img {
+    width: 100%;
+    height: 100%
+}
+
+.dash-profile .user-name {
+    font-size: 19px
+}
+
+.dash-profile .user-name a {
+    font-size: 19px;
+    color: #364E65
+}
+
+.dash-profile .user-reg-no {
+    font-size: 12px
+}
+
+.dash-profile .user-job {
+    font-size: 13px
+}
+
+.dash-profile .user-job a {
+    color: #364E65
+}
+
+.dash-profile .user-personal-info p {
+    font-size: 14px
+}
+
+.dash-profile .user-personal-info p span {
+    font-size: 12px;
+    color: #90A8BE;
+    display: block
+}
+
+.campaign-join-slide .carousel-control-next,
+.campaign-join-slide .carousel-control-prev {
+    color: #364E65;
+    bottom: inherit
+}
+
+.campaign-join-slide .carousel-control-prev {
+    left: inherit;
+    right: 15px
+}
+
+.profile-section h2 {
+    position: relative;
+    padding-bottom: 10px
+}
+
+.profile-section h2::after {
+    content: '';
+    position: absolute;
+    background: #FF3D38;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 35px
+}
+
+.quiz-section h2 {
+    position: relative;
+    padding-bottom: 10px
+}
+
+.quiz-section h2::after {
+    content: '';
+    position: absolute;
+    background: #FF3D38;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    width: 35px;
+    margin: 0 auto
+}
+
+.search-feed {
+    position: relative
+}
+
+.search-feed input {
+    padding-left: 30px;
+    font-size: 14px
+}
+
+.search-feed i {
+    position: absolute;
+    top: 10px;
+    left: 10px
+}
+
+.modal-content {
+    border-radius: 0
+}
+
+.scroll-icon {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    left: 0;
+    z-index: 9;
+    color: #fff
+}
+
+.scroll-icon i {
+    color: #fff;
+    font-size: 30px
+}
+
+.help-how {
+    position: fixed;
+    z-index: 9;
+    top: 90px;
+    right: -31px;
+    color: #fff;
+    background: #FF3D38;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    padding: 5px 20px;
+    display: inline-block
+}
+
+.help-how:hover {
+    color: #fff;
+    background: #ffffff
+}
+
+.login-toggle.show {
+    display: block;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
+}
+
+.signup-toggle.show {
+    display: block;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
+}
+
+.login-toggle {
+    display: none;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
+}
+
+.signup-toggle {
+    display: none;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
+}
+
+.uplod-profilephoto-icon {
+    position: absolute;
+    right: 55px;
+    z-index: 9;
+    top: 55px;
+    background: #ffffff;
+    color: #fff;
+    font-size: 15px;
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    padding: 3px 0;
+    border: 3px solid #fff
+}
+
+.uplod-profilephoto-icon:hover {
+    background: #FF3D38;
+    color: #fff
+}
+
+/*# sourceMappingURL=main.css.map */

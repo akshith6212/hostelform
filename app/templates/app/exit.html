@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel forms | NITC | Exit</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1484/1484799.png" type="image/x-icon">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Rubik:700&display=swap");
+
+        * {
+            box-sizing: border-box;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Rubik", sans-serif;
+            font-size: 1rem;
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            min-height: 100vh;
+            background-color: #E0E5ED;
+        }
+
+        /* navbar */
+        .navbar {
+            top: 0%;
+            left: 0%;
+            padding: 20px;
+            z-index: 10;
+            position: fixed;
+            width: 100%;
+        }
+
+        .homelink {
+            float: left;
+            display: inline;
+            margin-left: 3rem;
+            color: white;
+        }
+
+        .links {
+            float: right;
+            display: inline;
+            margin-right: 3rem;
+            color: white;
+        }
+
+        .navbar>a {
+            color: #c2cad0;
+            text-decoration: none;
+        }
+
+        .navbar>a:hover {
+            color: skyblue;
+        }
+
+        .navbar>a,
+        .links>a,
+        .homelink>a {
+            font-size: 1.6rem;
+        }
+
+        .links>a,
+        .homelink>a {
+            margin: 5px;
+            color: black;
+            text-decoration: none;
+            font-size: large;
+        }
+
+        .links>a:hover,
+        .homelink>a:hover {
+            color: skyblue;
+        }
+
+        /* warning */
+        .warning {
+            color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        window.history.forward();
+        function noBack()
+        {
+            window.history.forward();
+        }
+    </script>
+</head>
+
+<body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
+    <div class="navbar">
+        <div class="homelink">
+            <a href="/">home</a>
+        </div>
+        <div class="links">
+            {% if user.is_authenticated %}
+            <a href="/accounts/logout/">logout</a>
+            {% else %}
+            <a href="/accounts/login/">login</a>
+            <a href="/accounts/register/">register</a>
+            {% endif %}
+        </div>
+    </div>
+    {% if user.is_authenticated %}
+    {{time_exited}}
+    <div class="warning">{{msg}}</div>
+    {% else %}
+    <p class="warning">login please!</p>
+    {% endif %}
+</body>
+
+</html>
