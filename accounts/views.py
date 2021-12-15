@@ -12,13 +12,15 @@ def logout(request):
     return redirect('/')
 
 def login(request):
+    if request.user.is_superuser:
+        return redirect('app/admin_view/')
     if(request.method == 'POST'):
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
             auth_login(request, user)
-            return redirect('/')
+            return redirect('app/')
         else:
             messages.info(request,'Invalid username or Password')
             return redirect('login')

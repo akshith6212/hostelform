@@ -138,7 +138,7 @@
       {% if user.is_authenticated %}
       {% if user.is_superuser %}
       <a href="/admin/">admin panel</a>
-      <a href="/accounts/logout/">logout</a>
+      <a href="/logout/">logout</a>
       {% endif %}
       {% endif %}
     </div>
@@ -167,7 +167,7 @@
   {% endif %}
   {% endif %}
 
-  <a href="/export/"><button class="export">
+  <a href="/app/export/"><button class="export">
     <svg width="24" height="24" viewBox="0 0 512 512" data-name="Layer 1" id="Layer_1"
       xmlns="http://www.w3.org/2000/svg">
       <path

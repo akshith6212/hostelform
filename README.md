@@ -14,5 +14,10 @@ This website is for tracking how students go outside and come in.
 - Need to implement admin view. - Done
 - Need to also check if exporting is possible. - Done
 
+15th DEC
+- Changed routing scheme, now homepage is the login page.
+- Removed register view, but still the code is their in view.py.
+
+
 ### Pending
 - Import student data and test.

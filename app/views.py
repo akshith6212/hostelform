@@ -103,25 +103,29 @@ def admin_view(request):
         students.append(t)
     return render(request, 'app/admin.html', {'students':students})
   else:
-    return redirect('/')
+    return redirect('/app/')
 
 def export(request):
-  # Create the HttpResponse object with the appropriate CSV header.
-  response = HttpResponse(content_type='text/csv')
+  if request.user.is_superuser:
+    # Create the HttpResponse object with the appropriate CSV header.
+    response = HttpResponse(content_type='text/csv')
 
-  writer = csv.writer(response)
-  writer.writerow(['Exit time', 'Enter time', 'Student name', 'Reason'])
-  all_students = Registerbook.objects.all()
-  for s in all_students:
-    if s.exit_time.strftime("%D") == datetime.now().strftime("%D"):
-      local_tz = pytz.timezone('Asia/Kolkata')
-      exit_time_s = s.exit_time.replace(tzinfo=pytz.utc).astimezone(local_tz)
-      enter_time_s = s.enter_time.replace(tzinfo=pytz.utc).astimezone(local_tz)
-      writer.writerow([exit_time_s.strftime("Time: %H:%M, Date:%D"),
-                       enter_time_s.strftime("Time: %H:%M, Date:%D"), 
-                       s.user.user.username,
-                       s.reason
-                      ])
-
-  response['Content-Disposition'] = 'attachment; filename="data.csv"'
-  return response
+    writer = csv.writer(response)
+    writer.writerow(['Exit time', 'Enter time', 'Student name', 'Reason'])
+    all_students = Registerbook.objects.all()
+    local_tz = pytz.timezone('Asia/Kolkata')
+    for s in all_students:
+      if s.exit_time.strftime("%D") == datetime.now().strftime("%D"):
+        exit_time_s = s.exit_time.replace(tzinfo=pytz.utc).astimezone(local_tz)
+        enter_time_s = s.enter_time.replace(tzinfo=pytz.utc).astimezone(local_tz)
+        writer.writerow([exit_time_s.strftime("Time: %H:%M, Date:%D"),
+                        enter_time_s.strftime("Time: %H:%M, Date:%D"), 
+                        s.user.user.username,
+                        s.reason
+                        ])
+    n = datetime.now().strftime("%D")
+    # filename = "data{}.csv".format('test')
+    response['Content-Disposition'] = 'attachment; filename="data_{}.csv"'.format(n)
+    return response
+  else:
+    return redirect('/app/')
