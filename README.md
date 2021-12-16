@@ -17,7 +17,12 @@ This website is for tracking how students go outside and come in.
 15th DEC
 - Changed routing scheme, now homepage is the login page.
 - Removed register view, but still the code is their in view.py.
+- Changed output file name format to include date also.
 
+16th DEC
+- Added second entry time.
+- Changed date format to dd/mm/yyyy.
 
 ### Pending
 - Import student data and test.
+- Thinking of adding a photo so that students will not give a proxy, in this case student needs to upload a photo only once per sem.

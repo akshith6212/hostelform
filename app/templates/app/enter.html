@@ -113,7 +113,8 @@
         </div>
     </div>
     {% if user.is_authenticated %}
-    {{time_entered}}
+    {{time_entered}} <br>
+    {{last_time_entered}}
     <div class="warning">{{msg}}</div>
     {% else %}
     <p class="warning">login please!</p>
